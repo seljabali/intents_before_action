@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.showCasing.GoogleMapsAppFragment
 import com.seljabali.intentsbeforeaction.showCasing.GoogleMapsWebFragment
+import com.seljabali.intentsbeforeaction.showCasing.SystemSettingsFragment
 import kotlinx.android.synthetic.main.fragment_intents_show_casing.*
 
 class IntentsShowCasingFragment : Fragment() {
@@ -40,7 +41,6 @@ class IntentsShowCasingFragment : Fragment() {
     }
 
     private fun onSystemSettingsClickListener(): View.OnClickListener? {
-        // TODO: Add Fragment
-        return View.OnClickListener { startFragment(GoogleMapsWebFragment(), GoogleMapsWebFragment.getTag()) }
+        return View.OnClickListener { startFragment(SystemSettingsFragment(), SystemSettingsFragment.getTag()) }
     }
 }

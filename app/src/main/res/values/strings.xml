@@ -15,4 +15,5 @@
     <string name="longitude_sample">-122.463</string>
     <string name="show_lat_long_in_maps_web"><![CDATA[Show Lat & Long in Maps Web]]></string>
     <string name="enter_zoom_1_to_20">Enter Zoom value: 1-20</string>
+    <string name="show_location_services">Show Location Services</string>
 </resources>
