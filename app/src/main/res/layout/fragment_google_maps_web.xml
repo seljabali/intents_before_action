@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="@color/white"
+    android:padding="@dimen/double_spacing">
+
+    <EditText
+        android:id="@+id/etAddressForWeb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_an_address_hint"
+        android:hint="@string/enter_an_address_hint"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/btnShowAddressInMapsWeb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_address_in_google_maps_web"
+        android:textColor="@color/black"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1.0">
+
+        <EditText
+            android:id="@+id/etLatitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:inputType="numberSigned"
+            android:text="@string/latitude_sample"
+            android:hint="@string/latitude"/>
+
+        <EditText
+            android:id="@+id/etLongitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:inputType="numberSigned"
+            android:text="@string/longitude_sample"
+            android:hint="@string/longitude"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnShowLatAndLongInNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_lat_long_in_maps_web"
+        android:textColor="@color/black"/>
+
+    <Spinner
+        android:id="@+id/spMapViewTypes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/etZoomValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="@string/enter_zoom_1_to_20"/>
+</LinearLayout>

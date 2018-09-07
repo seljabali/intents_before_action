@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Intents Before Action</string>
+    <string name="action_settings">Settings</string>
+    <string name="google_maps_app">Google Maps App</string>
+    <string name="google_maps_web">Google Maps Web</string>
+    <string name="system_settings">System Settings</string>
+    <string name="show_address_in_google_maps_app">Show Address In Maps</string>
+    <string name="show_address_in_google_maps_navigation">Show Address In Navigation</string>
+    <string name="enter_an_address_hint">995 E Baseline Rd, Tempe, AZ, 85283</string>
+    <string name="show_address_in_google_maps_web">Show Address In Maps Web</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="show_address_in_street_view">Show Address in Street View</string>
+    <string name="latitude_sample">37.7648</string>
+    <string name="longitude_sample">-122.463</string>
+    <string name="show_lat_long_in_maps_web"><![CDATA[Show Lat & Long in Maps Web]]></string>
+    <string name="enter_zoom_1_to_20">Enter Zoom value: 1-20</string>
+</resources>

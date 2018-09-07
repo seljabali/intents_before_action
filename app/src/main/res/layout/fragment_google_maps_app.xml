@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="@color/white"
+    android:padding="@dimen/double_spacing">
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_an_address_hint"
+        android:hint="@string/enter_an_address_hint"
+        android:inputType="text"/>
+
+    <Button
+        android:id="@+id/btnShowAddressInMaps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_address_in_google_maps_app"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/btnShowAddressInNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_address_in_google_maps_navigation"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1.0">
+
+        <EditText
+            android:id="@+id/etLatitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:inputType="numberSigned"
+            android:text="@string/latitude_sample"
+            android:hint="@string/latitude"/>
+
+        <EditText
+            android:id="@+id/etLongitude"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:inputType="numberSigned"
+            android:text="@string/longitude_sample"
+            android:hint="@string/longitude"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnShowAddressInStreetView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_address_in_street_view"
+        android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/btnShowLatAndLongInNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/show_address_in_google_maps_navigation"
+        android:textColor="@color/black"/>
+</LinearLayout>
