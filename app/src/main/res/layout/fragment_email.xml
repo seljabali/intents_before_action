@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true"
+    android:clickable="true"
+    android:background="@color/white"
+    android:padding="@dimen/double_spacing">
+
+    <EditText
+        android:id="@+id/etToAddresses"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/some_email"
+        android:hint="@string/to_email_addresses"/>
+
+    <EditText
+        android:id="@+id/etSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/double_spacing"
+        android:text="@string/some_subject"
+        android:hint="@string/with_subject"/>
+
+    <EditText
+        android:id="@+id/etBody"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/double_spacing"
+        android:text="@string/some_body"
+        android:hint="@string/with_body"/>
+
+    <EditText
+        android:id="@+id/etUri"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/double_spacing"
+        android:hint="@string/with_attachment"/>
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/double_spacing"
+        android:hint="@string/send_email"/>
+
+    <Button
+        android:id="@+id/btnShareEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/double_spacing"
+        android:hint="@string/share_email"/>
+
+    <Button
+        android:id="@+id/btnOpenInbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/double_spacing"
+        android:hint="@string/open_inbox"/>
+
+</LinearLayout>

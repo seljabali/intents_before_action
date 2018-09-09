@@ -14,7 +14,6 @@ import com.seljabali.intentsbeforeaction.intents.googleMaps.MapViewType
 import android.widget.AdapterView.OnItemSelectedListener
 import com.seljabali.intentsbeforeaction.intents.googleMaps.getQueryMapInWeb
 
-
 class GoogleMapsWebFragment : Fragment() {
 
     companion object {
@@ -35,8 +34,8 @@ class GoogleMapsWebFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btnShowAddressInMapsWeb.setOnClickListener {onShowAddressInMapsWebClickListener()}
-        btnShowLatAndLongInNavigation.setOnClickListener {onShowLatLongInMapsWebClickListener()}
+        btnShowAddressInMapsWeb.setOnClickListener { onShowAddressInMapsWebClickListener() }
+        btnShowLatAndLongInNavigation.setOnClickListener { onShowLatLongInMapsWebClickListener() }
         setupMapViewTypes()
     }
 

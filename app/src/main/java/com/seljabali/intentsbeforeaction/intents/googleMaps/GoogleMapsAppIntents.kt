@@ -5,6 +5,7 @@ import android.net.Uri
 
 const val mapsPackage = "com.google.android.apps.maps"
 const val navigationQuery = "google.navigation:q="
+const val streetViewQuery = "google.streetview:cbll="
 
 fun showLocationInMaps(address: String): Intent {
     val gmmIntentUri = Uri.parse("geo:0,0?q=$address")
@@ -65,7 +66,7 @@ fun showInStreetView(latitude: Float, longitude: Float, zoom: Float, mapZoom: In
  */
 fun showInStreetView(latitude: Float, longitude: Float, yaw: Float?, pitch: Int?, zoom: Float?,
                      mapZoom: Int?): Intent {
-    val builder = StringBuilder("google.streetview:cbll=")
+    val builder = StringBuilder(streetViewQuery)
     builder.append(latitude)
     builder.append(",")
     builder.append(longitude)

@@ -26,10 +26,10 @@ class GoogleMapsAppFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btnShowAddressInMaps.setOnClickListener({onShowAddressInMapsClickListener()})
-        btnShowAddressInNavigation.setOnClickListener({onShowAddressInNavigationClickListener()})
-        btnShowAddressInStreetView.setOnClickListener({onShowAddressInStreetViewClickListener()})
-        btnShowLatAndLongInNavigation.setOnClickListener({onShowLatAndLongInNavigationViewClickListener()})
+        btnShowAddressInMaps.setOnClickListener { onShowAddressInMapsClickListener() }
+        btnShowAddressInNavigation.setOnClickListener { onShowAddressInNavigationClickListener() }
+        btnShowAddressInStreetView.setOnClickListener { onShowAddressInStreetViewClickListener() }
+        btnShowLatAndLongInNavigation.setOnClickListener { onShowLatAndLongInNavigationViewClickListener() }
     }
 
     private fun onShowAddressInMapsClickListener() {

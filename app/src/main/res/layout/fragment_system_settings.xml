@@ -1,18 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:focusable="true"
-    android:clickable="true"
     android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
     android:padding="@dimen/double_spacing">
 
-    <Button
-        android:id="@+id/btnShowLocationServices"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/show_location_services"
-        android:layout_gravity="center_horizontal"/>
-</LinearLayout>
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnShowLocationServices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/show_location_services" />
+
+        <Button
+            android:id="@+id/btnShowSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/show_settings" />
+
+        <Button
+            android:id="@+id/btnShowApnSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/show_apn_settings" />
+
+        <Button
+            android:id="@+id/btnShowWirelessSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/show_wireless_settings" />
+
+        <Button
+            android:id="@+id/btnShowAirplaneModeSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/show_airplane_mode_settings" />
+
+        <Button
+            android:id="@+id/btnShowAccessibilitySettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/show_accessibility_settings" />
+
+        <Button
+            android:id="@+id/btnShowUsageSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/show_usage_settings" />
+
+        <Button
+            android:id="@+id/btnShowSecuritySettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/show_security_settings" />
+
+        <Button
+            android:id="@+id/btnShowPrivacySettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/show_privacy_settings" />
+    </LinearLayout>
+</ScrollView>

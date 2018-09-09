@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.seljabali.intentsbeforeaction.showCasing.GoogleMapsAppFragment
-import com.seljabali.intentsbeforeaction.showCasing.GoogleMapsWebFragment
-import com.seljabali.intentsbeforeaction.showCasing.SystemSettingsFragment
+import com.seljabali.intentsbeforeaction.showCasing.*
 import kotlinx.android.synthetic.main.fragment_intents_show_casing.*
 
 class IntentsShowCasingFragment : Fragment() {
@@ -19,9 +17,15 @@ class IntentsShowCasingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        btnGoogleMapsApp.setOnClickListener(onGoogleMapsAppClickListener())
-        btnGoogleMapsWeb.setOnClickListener(onGoogleMapsWebClickListener())
-        btnSystemSettings.setOnClickListener(onSystemSettingsClickListener())
+        btnApp.setOnClickListener { onAppsClickListener() }
+        btnGoogleMapsApp.setOnClickListener { onGoogleMapsAppClickListener() }
+        btnGoogleMapsWeb.setOnClickListener { onGoogleMapsWebClickListener() }
+        btnSystemSettings.setOnClickListener { onSystemSettingsClickListener() }
+        btnMedia.setOnClickListener { onMediaClickListener() }
+        btnEmail.setOnClickListener { onEmailClickListener() }
+        btnStore.setOnClickListener { onStoreClickListener() }
+        btnPhone.setOnClickListener { onPhoneClickListener() }
+        btnYoutube.setOnClickListener { onYoutubeClickListener() }
     }
 
     private fun startFragment(fragment: Fragment, tag: String) {
@@ -32,15 +36,39 @@ class IntentsShowCasingFragment : Fragment() {
                 .commit()
     }
 
-    private fun onGoogleMapsAppClickListener(): View.OnClickListener? {
-        return View.OnClickListener { startFragment(GoogleMapsAppFragment(), GoogleMapsAppFragment.getTag()) }
+    private fun onAppsClickListener() {
+        startFragment(AppFragment(), AppFragment.getTag())
     }
 
-    private fun onGoogleMapsWebClickListener(): View.OnClickListener? {
-        return View.OnClickListener { startFragment(GoogleMapsWebFragment(), GoogleMapsWebFragment.getTag()) }
+    private fun onGoogleMapsAppClickListener() {
+        startFragment(GoogleMapsAppFragment(), GoogleMapsAppFragment.getTag())
     }
 
-    private fun onSystemSettingsClickListener(): View.OnClickListener? {
-        return View.OnClickListener { startFragment(SystemSettingsFragment(), SystemSettingsFragment.getTag()) }
+    private fun onGoogleMapsWebClickListener() {
+        startFragment(GoogleMapsWebFragment(), GoogleMapsWebFragment.getTag())
+    }
+
+    private fun onSystemSettingsClickListener() {
+        startFragment(SystemSettingsFragment(), SystemSettingsFragment.getTag())
+    }
+
+    private fun onMediaClickListener() {
+        startFragment(MediaFragment(), MediaFragment.getTag())
+    }
+
+    private fun onEmailClickListener() {
+        startFragment(EmailFragment(), EmailFragment.getTag())
+    }
+
+    private fun onStoreClickListener() {
+        startFragment(StoreFragment(), StoreFragment.getTag())
+    }
+
+    private fun onPhoneClickListener() {
+        startFragment(PhoneFragment(), PhoneFragment.getTag())
+    }
+
+    private fun onYoutubeClickListener() {
+        startFragment(YoutubeFragment(), YoutubeFragment.getTag())
     }
 }

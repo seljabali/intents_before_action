@@ -1,35 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
     android:clickable="true"
     android:focusable="true"
     android:padding="@dimen/double_spacing">
 
-    <Button
-        android:id="@+id/btnGoogleMapsApp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/google_maps_app"
-        android:textColor="@color/black"/>
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnGoogleMapsWeb"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/google_maps_web"
-        android:textColor="@color/black"/>
+        <Button
+            android:id="@+id/btnApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/apps"
+            android:textColor="@color/black" />
 
-    <Button
-        android:id="@+id/btnSystemSettings"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/system_settings"
-        android:textColor="@color/black"/>
+        <Button
+            android:id="@+id/btnGoogleMapsApp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/google_maps_app"
+            android:textColor="@color/black" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnGoogleMapsWeb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/google_maps_web"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnSystemSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/system_settings"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnMedia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/media"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnStore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/store"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/phone"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnYoutube"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/youtube"
+            android:textColor="@color/black" />
+    </LinearLayout>
+</ScrollView>
