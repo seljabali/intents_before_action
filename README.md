@@ -1,11 +1,12 @@
 # Intents Before Action
+[![](https://jitpack.io/v/seljabali/intents_before_action.svg)](https://jitpack.io/#seljabali/intents_before_action)
 #### Android Intents made easy, inorder for action to ensue.
 
 ![Demo](https://github.com/seljabali/intents_before_action/blob/master/app/src/main/res/mipmap-mdpi/intents_before_action.gif)
 
 ## What's in it?
-#### An app show casing the intent builders in use, which is in a separate module to allow for ProGaurd removal.
-#### The following Intent builders:
+#### An `app` module show casing the intent builders in use.
+#### A `library` module having the following Intent builders:
 
 ### Google Maps
 - Native Maps 
@@ -41,4 +42,12 @@ startActivity(PhoneIntentsKt.getDialNumberIntent("1800-424-1444"));
 Kotlin:
 ```kotlin
 startActivity(getPlayYouTubeQueryIntent(context, "Never Gonna Give You Up"))
+```
+
+## Installation
+In your module's `build.gradle`:
+```
+dependencies {
+    implementation 'com.github.seljabali:intents_before_action:v1.0.0'
+}
 ```
