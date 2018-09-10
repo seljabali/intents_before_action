@@ -1,5 +1,9 @@
 # Intents Before Action
-## Android Intents made easy, inorder for action to ensue.
+#### Android Intents made easy, inorder for action to ensue.
+
+## What's in it?
+#### An app show casing the intent builders in use. App made in a separate module to allow for ProGaurd removal.
+#### The following Intent builders:
 
 ### Google Maps
 - Native Maps 
@@ -25,8 +29,7 @@
 ### Share Text
 - Builder with addresses, subjects, attachements
 ### System Settings
-- Open Wifi Settings
-- Open Airplane Mode, etc
+- Open Wifi Settings, Airplane Mode, etc
 
 ## Examples
 Java:
