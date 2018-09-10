@@ -60,13 +60,13 @@ class GoogleMapsWebFragment : Fragment() {
     }
 
     private fun getZoomValue(): Int {
-        val enteredZoomValue = etZoomValue.text.toString()
+        val enteredZoomTextValue = etZoomValue.text.toString()
         val usedZoomValue: Int =
         when {
-            enteredZoomValue.isEmpty() -> defaultZoomValue
-            enteredZoomValue.toInt() < minZoomValue -> minZoomValue
-            enteredZoomValue.toInt() > maxZoomValue -> maxZoomValue
-            else -> defaultZoomValue
+            enteredZoomTextValue.isEmpty() -> defaultZoomValue
+            enteredZoomTextValue.toInt() < minZoomValue -> minZoomValue
+            enteredZoomTextValue.toInt() > maxZoomValue -> maxZoomValue
+            else -> enteredZoomTextValue.toInt()
         }
         etZoomValue.setText(usedZoomValue.toString())
         return usedZoomValue
