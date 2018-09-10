@@ -1,4 +1,4 @@
-package com.seljabali.intentsbeforeaction
+package com.seljabali.library.util
 
 import android.content.Context
 import android.content.Intent

@@ -1,4 +1,4 @@
-package com.seljabali.intentsbeforeaction.intents
+package com.seljabali.library.intents
 
 import android.content.Intent
 import android.net.Uri

@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.intentsbeforeaction.intents.getPlayYouTubeIdIntent
-import com.seljabali.intentsbeforeaction.intents.getPlayYouTubeQueryIntent
+import com.seljabali.library.intents.getPlayYouTubeIdIntent
+import com.seljabali.library.intents.getPlayYouTubeQueryIntent
 import kotlinx.android.synthetic.main.fragment_youtube.*
 
 class YoutubeFragment: Fragment() {

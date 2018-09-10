@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.intentsbeforeaction.intents.googleMaps.showInStreetView
-import com.seljabali.intentsbeforeaction.intents.googleMaps.showLocationInMaps
-import com.seljabali.intentsbeforeaction.intents.googleMaps.showLocationInNavigation
+import com.seljabali.library.intents.googleMaps.showInStreetView
+import com.seljabali.library.intents.googleMaps.showLocationInMaps
+import com.seljabali.library.intents.googleMaps.showLocationInNavigation
 import kotlinx.android.synthetic.main.fragment_google_maps_app.*
 
 class GoogleMapsAppFragment : Fragment() {

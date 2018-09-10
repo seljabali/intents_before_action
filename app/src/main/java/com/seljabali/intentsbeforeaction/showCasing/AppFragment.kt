@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.IntentsShowCasingActivity
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.intentsbeforeaction.intents.createShortCut
-import com.seljabali.intentsbeforeaction.intents.getLaunchAppIntent
+import com.seljabali.library.intents.createShortCut
+import com.seljabali.library.intents.getLaunchAppIntent
 import kotlinx.android.synthetic.main.fragment_app.*
 
 class AppFragment: Fragment() {

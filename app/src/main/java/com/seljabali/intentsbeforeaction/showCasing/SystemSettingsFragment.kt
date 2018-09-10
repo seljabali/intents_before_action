@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.intentsbeforeaction.intents.*
+import com.seljabali.library.intents.*
 import kotlinx.android.synthetic.main.fragment_system_settings.*
 
 class SystemSettingsFragment: Fragment() {

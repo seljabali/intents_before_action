@@ -1,9 +1,9 @@
-package com.seljabali.intentsbeforeaction.intents
+package com.seljabali.library.intents
 
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import com.seljabali.intentsbeforeaction.isIntentAvailable
+import com.seljabali.library.util.isIntentAvailable
 
 private const val youtubePackage = "com.google.android.youtube"
 private const val youtubeUrl = "https://www.youtube.com/"

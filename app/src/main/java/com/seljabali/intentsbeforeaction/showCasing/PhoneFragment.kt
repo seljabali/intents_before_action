@@ -8,11 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.intentsbeforeaction.intents.getDialNumberIntent
-import com.seljabali.intentsbeforeaction.intents.getPickContactWithPhoneIntent
-import com.seljabali.intentsbeforeaction.intents.getSmsIntent
 import kotlinx.android.synthetic.main.fragment_phone.*
 import android.provider.ContactsContract.CommonDataKinds.Phone
+import com.seljabali.library.intents.getDialNumberIntent
+import com.seljabali.library.intents.getPickContactWithPhoneIntent
+import com.seljabali.library.intents.getSmsIntent
 
 class PhoneFragment: Fragment() {
 

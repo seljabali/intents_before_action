@@ -1,4 +1,4 @@
-package com.seljabali.intentsbeforeaction.intents.googleMaps
+package com.seljabali.library.intents.googleMaps
 
 import android.content.Intent
 import android.net.Uri

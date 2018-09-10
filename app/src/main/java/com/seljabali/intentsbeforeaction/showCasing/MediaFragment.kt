@@ -9,12 +9,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.intentsbeforeaction.getPath
+import com.seljabali.library.intents.getPickFile
+import com.seljabali.library.intents.getPlayAudioFileIntent
+import com.seljabali.library.intents.getPlayImageFileIntent
+import com.seljabali.library.intents.getPlayVideoFileIntent
+import com.seljabali.library.util.getPath
 import kotlinx.android.synthetic.main.fragment_media.*
-import com.seljabali.intentsbeforeaction.intents.getPickFile
-import com.seljabali.intentsbeforeaction.intents.getPlayAudioFileIntent
-import com.seljabali.intentsbeforeaction.intents.getPlayImageFileIntent
-import com.seljabali.intentsbeforeaction.intents.getPlayVideoFileIntent
 
 class MediaFragment: Fragment() {
 

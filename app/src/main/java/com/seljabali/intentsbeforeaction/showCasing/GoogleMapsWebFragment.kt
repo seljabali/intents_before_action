@@ -6,13 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.intentsbeforeaction.intents.googleMaps.getMapInWeb
 import kotlinx.android.synthetic.main.fragment_google_maps_web.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import com.seljabali.intentsbeforeaction.intents.googleMaps.MapViewType
 import android.widget.AdapterView.OnItemSelectedListener
-import com.seljabali.intentsbeforeaction.intents.googleMaps.getQueryMapInWeb
+import com.seljabali.library.intents.googleMaps.MapViewType
+import com.seljabali.library.intents.googleMaps.getMapInWeb
+import com.seljabali.library.intents.googleMaps.getQueryMapInWeb
 
 class GoogleMapsWebFragment : Fragment() {
 

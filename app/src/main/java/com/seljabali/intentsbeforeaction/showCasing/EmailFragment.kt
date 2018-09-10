@@ -7,9 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.intentsbeforeaction.intents.getEmailSendIntent
-import com.seljabali.intentsbeforeaction.intents.getInboxOpenIntent
-import com.seljabali.intentsbeforeaction.intents.getShareEmailIntent
+import com.seljabali.library.intents.getEmailSendIntent
+import com.seljabali.library.intents.getInboxOpenIntent
+import com.seljabali.library.intents.getShareEmailIntent
 import kotlinx.android.synthetic.main.fragment_email.*
 
 class EmailFragment: Fragment() {

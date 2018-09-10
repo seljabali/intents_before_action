@@ -1,11 +1,11 @@
-package com.seljabali.intentsbeforeaction.intents
+package com.seljabali.library.intents
 
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.provider.MediaStore
-import com.seljabali.intentsbeforeaction.isIntentAvailable
+import com.seljabali.library.util.isIntentAvailable
 import java.io.File
 
 const val ANY_TYPE = "*/*"

@@ -6,10 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.intentsbeforeaction.intents.getAmazonForPackageIntent
-import com.seljabali.intentsbeforeaction.intents.getAmazonForQueryIntent
-import com.seljabali.intentsbeforeaction.intents.getGooglePlayForPackageIntent
-import com.seljabali.intentsbeforeaction.intents.getGooglePlayForQueryIntent
+import com.seljabali.library.intents.getAmazonForPackageIntent
+import com.seljabali.library.intents.getAmazonForQueryIntent
+import com.seljabali.library.intents.getGooglePlayForPackageIntent
+import com.seljabali.library.intents.getGooglePlayForQueryIntent
 import kotlinx.android.synthetic.main.fragment_store.*
 
 class StoreFragment: Fragment() {
