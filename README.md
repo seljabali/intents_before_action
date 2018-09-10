@@ -1,8 +1,10 @@
 # Intents Before Action
 #### Android Intents made easy, inorder for action to ensue.
 
+![Demo](https://github.com/seljabali/intents_before_action/blob/master/app/src/main/res/mipmap-mdpi/intents_before_action.gif)
+
 ## What's in it?
-#### An app show casing the intent builders in use. App made in a separate module to allow for ProGaurd removal.
+#### An app show casing the intent builders in use, which is in a separate module to allow for ProGaurd removal.
 #### The following Intent builders:
 
 ### Google Maps
