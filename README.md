@@ -37,11 +37,11 @@
 ## Examples
 Java:
 ```java
-startActivity(PhoneIntentsKt.getDialNumberIntent("1800-424-1444"));
+startActivity(IntentsUtil.getDialNumber("1800-424-1444"));
 ```
 Kotlin:
 ```kotlin
-startActivity(getPlayYouTubeQueryIntent(context, "Never Gonna Give You Up"))
+startActivity(Intents.getPlayYouTubeQuery(context, "Never Gonna Give You Up"))
 ```
 
 ## Installation

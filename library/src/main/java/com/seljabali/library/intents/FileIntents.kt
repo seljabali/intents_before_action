@@ -55,7 +55,7 @@ fun Intents.Companion.getPlayAudioFile(file: File): Intent = getPlayMediaFile(fi
 
 fun Intents.Companion.getPlayAudioFile(path: String): Intent = getPlayMediaFile(path, AUDIO_TYPE)
 
-fun Intents.Companion.getPlayAudioIntent(url: String): Intent = getPlayMedia(url, AUDIO_TYPE)
+fun Intents.Companion.getPlayAudio(url: String): Intent = getPlayMedia(url, AUDIO_TYPE)
 
 // Image
 fun Intents.Companion.getPlayImageFile(uri: Uri): Intent = getPlayMedia(uri, IMAGE_TYPE)
