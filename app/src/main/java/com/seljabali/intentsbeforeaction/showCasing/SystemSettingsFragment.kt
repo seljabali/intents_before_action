@@ -36,38 +36,38 @@ class SystemSettingsFragment: Fragment() {
     }
 
     private fun onShowSettingsClickListener() {
-        activity?.startActivity(getSettings())
+        activity?.startActivity(Intents.getSettings())
     }
 
     private fun onShowApnSettingsClickListener() {
-        activity?.startActivity(getApnSettings())
+        activity?.startActivity(Intents.getApnSettings())
     }
 
     private fun onShowWirelessSettingsClickListener() {
-        activity?.startActivity(getWirelessSettings())
+        activity?.startActivity(Intents.getWirelessSettings())
     }
 
     private fun onShowAirplaneModeSettingsClickListener() {
-        activity?.startActivity(getAirplaneModeSettings())
+        activity?.startActivity(Intents.getAirplaneModeSettings())
     }
 
     private fun onShowAccessibilitySettingsClickListener() {
-        activity?.startActivity(getAccessibilitySettings())
+        activity?.startActivity(Intents.getAccessibilitySettings())
     }
 
     private fun onShowUsageSettingsClickListener() {
-        activity?.startActivity(getUsageSettings())
+        activity?.startActivity(Intents.getUsageSettings())
     }
 
     private fun onShowSecuritySettingsClickListener() {
-        activity?.startActivity(getSecuritySettings())
+        activity?.startActivity(Intents.getSecuritySettings())
     }
 
     private fun onShowPrivacySettingsClickListener() {
-        activity?.startActivity(getPrivacySettings())
+        activity?.startActivity(Intents.getPrivacySettings())
     }
 
     private fun onShowLocationServicesClickListener() {
-        activity?.startActivity(getLocationServicesSettings())
+        activity?.startActivity(Intents.getLocationServicesSettings())
     }
 }

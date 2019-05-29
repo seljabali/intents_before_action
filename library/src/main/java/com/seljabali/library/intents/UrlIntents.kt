@@ -1,10 +1,13 @@
+@file:JvmName("IntentsUtil")
+@file:JvmMultifileClass
+
 package com.seljabali.library.intents
 
 import android.content.Intent
 import android.net.Uri
 import java.net.URL
 
-fun getOpenWebBrowserIntent(urlParam: String): Intent {
+fun Intents.Companion.getOpenWebBrowser(urlParam: String): Intent {
     var url = urlParam
     if (!url.startsWith("https://") && !url.startsWith("http://")) {
         url = "http://$url"
@@ -12,6 +15,4 @@ fun getOpenWebBrowserIntent(urlParam: String): Intent {
     return Intent(Intent.ACTION_VIEW, Uri.parse(url))
 }
 
-fun getOpenWebBrowserIntent(url: URL): Intent {
-    return getOpenWebBrowserIntent(url.toString())
-}
+fun Intents.Companion.getOpenWebBrowser(url: URL): Intent = getOpenWebBrowser(url.toString())

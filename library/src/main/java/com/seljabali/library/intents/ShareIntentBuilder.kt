@@ -3,7 +3,7 @@ package com.seljabali.library.intents
 import android.content.Intent
 import android.net.Uri
 
-class ShareIntentBuilder {
+open class ShareIntentBuilder {
     var intent: Intent
         private set
 

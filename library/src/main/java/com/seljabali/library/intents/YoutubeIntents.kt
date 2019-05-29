@@ -1,3 +1,6 @@
+@file:JvmName("IntentsUtil")
+@file:JvmMultifileClass
+
 package com.seljabali.library.intents
 
 import android.content.Context
@@ -14,37 +17,24 @@ private const val youtubeWebId = youtubeUrl + "watch?v="
 private const val youtubeWebQuery = youtubeUrl + "results?search_query="
 
 // Youtube, Id
-fun getPlayYouTubeIdIntent(context: Context, videoId: String): Intent {
-    if (isIntentAvailable(context, youtubePackage)) {
-        return getPlayYouTubeIdNativeIntent(videoId)
-    }
-    return getPlayYouTubeIdWebIntent(videoId)
-}
+fun Intents.Companion.getPlayYouTubeId(context: Context, videoId: String): Intent =
+        if (isIntentAvailable(context, youtubePackage)) getPlayYouTubeIdNative(videoId)
+        else getPlayYouTubeIdWeb(videoId)
 
-fun getPlayYouTubeIdNativeIntent(videoId: String): Intent {
-    return Intent(Intent.ACTION_VIEW, Uri.parse(youtubeNativeId + videoId))
-}
+fun Intents.Companion.getPlayYouTubeIdNative(videoId: String): Intent = Intent(Intent.ACTION_VIEW, Uri.parse(youtubeNativeId + videoId))
 
-fun getPlayYouTubeIdWebIntent(videoId: String): Intent {
-    return Intent(Intent.ACTION_VIEW, Uri.parse(youtubeWebId + videoId))
-}
+fun Intents.Companion.getPlayYouTubeIdWeb(videoId: String): Intent = Intent(Intent.ACTION_VIEW, Uri.parse(youtubeWebId + videoId))
 
 // Youtube, Query
-fun getPlayYouTubeQueryIntent(context: Context, videoId: String): Intent {
-    if (isIntentAvailable(context, youtubePackage)) {
-        return getPlayYouTubeQueryNativeIntent(videoId)
-    }
-    return getPlayYouTubeQueryWebIntent(videoId)
-}
+fun Intents.Companion.getPlayYouTubeQuery(context: Context, videoId: String): Intent =
+        if (isIntentAvailable(context, youtubePackage)) getPlayYouTubeQueryNative(videoId)
+        else getPlayYouTubeQueryWeb(videoId)
 
-fun getPlayYouTubeQueryNativeIntent(videoQuery: String): Intent {
-    val intent = Intent(Intent.ACTION_SEARCH)
-    intent.setPackage(youtubePackage)
-    intent.putExtra("query", videoQuery)
-    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-    return intent
-}
+fun Intents.Companion.getPlayYouTubeQueryNative(videoQuery: String): Intent =
+        Intent(Intent.ACTION_SEARCH).apply {
+            setPackage(youtubePackage)
+            putExtra("query", videoQuery)
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        }
 
-fun getPlayYouTubeQueryWebIntent(videoQuery: String): Intent {
-    return Intent(Intent.ACTION_VIEW, Uri.parse(youtubeWebQuery + videoQuery))
-}
+fun Intents.Companion.getPlayYouTubeQueryWeb(videoQuery: String): Intent = Intent(Intent.ACTION_VIEW, Uri.parse(youtubeWebQuery + videoQuery))

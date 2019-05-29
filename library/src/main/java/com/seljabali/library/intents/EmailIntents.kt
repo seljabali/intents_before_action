@@ -1,3 +1,6 @@
+@file:JvmName("IntentsUtil")
+@file:JvmMultifileClass
+
 package com.seljabali.library.intents
 
 import android.content.Intent
@@ -5,13 +8,12 @@ import android.net.Uri
 
 private const val MIME_TYPE_EMAIL = "message/rfc822"
 
-fun getInboxOpenIntent(): Intent {
-    val intent = Intent(Intent.ACTION_MAIN)
-    intent.addCategory(Intent.CATEGORY_APP_EMAIL)
-    return intent
-}
+fun Intents.Companion.getInboxOpen(): Intent =
+        Intent(Intent.ACTION_MAIN).apply {
+            addCategory(Intent.CATEGORY_APP_EMAIL)
+        }
 
-fun getEmailSendIntent(address: String, subject: String?): Intent? {
+fun Intents.Companion.getEmailSend(address: String, subject: String?): Intent? {
     if (address.isEmpty()) {
         return null
     }
@@ -19,34 +21,28 @@ fun getEmailSendIntent(address: String, subject: String?): Intent? {
     if (subject != null && subject.isNotEmpty()) {
         url += "?subject=" + Uri.encode(subject)
     }
-    return getEmailSendIntent(url)
+    return getEmailSend(url)
 }
 
-fun getEmailSendIntent(url: String): Intent {
-    val uri = Uri.parse(url)
-    val emailIntent = Intent(Intent.ACTION_SENDTO)
-    emailIntent.data = uri
-    return emailIntent
-}
+fun Intents.Companion.getEmailSend(url: String): Intent =
+        Intent(Intent.ACTION_SENDTO).apply {
+            data = Uri.parse(url)
+        }
 
-fun getShareEmailIntent(address: String?, subject: String?, body: String?): Intent {
-    return getShareEmailIntent(address, subject, body, null)
-}
+fun Intents.Companion.getShareEmail(address: String?, subject: String?, body: String?): Intent =
+        getShareEmail(address, subject, body, null)
 
-fun getShareEmailIntent(address: String?, subject: String?, body: String?, attachment: Uri?): Intent {
-    return getShareEmailIntent(if (address == null) null else arrayOf(address), subject, body, attachment)
-}
+fun Intents.Companion.getShareEmail(address: String?, subject: String?, body: String?, attachment: Uri?): Intent =
+        getShareEmail(if (address == null) null else arrayOf(address), subject, body, attachment)
 
-fun getShareEmailIntent(addresses: ArrayList<String>?, subject: String?, body: String?, attachment: Uri?): Intent {
-    return getShareEmailIntent(addresses!!.toTypedArray(), subject, body, attachment)
-}
+fun Intents.Companion.getShareEmail(addresses: ArrayList<String>?, subject: String?, body: String?, attachment: Uri?): Intent =
+        getShareEmail(addresses!!.toTypedArray(), subject, body, attachment)
 
-fun getShareEmailIntent(addresses: Array<String>?, subject: String?, body: String?, attachment: Uri?): Intent {
-    return ShareIntentBuilder()
-            .withAddresses(addresses)
-            .withSubject(subject)
-            .withText(body)
-            .withAttachment(attachment)
-            .withExplicitMimeType(MIME_TYPE_EMAIL)
-            .build()
-}
+fun Intents.Companion.getShareEmail(addresses: Array<String>?, subject: String?, body: String?, attachment: Uri?): Intent =
+        ShareIntentBuilder()
+                .withAddresses(addresses)
+                .withSubject(subject)
+                .withText(body)
+                .withAttachment(attachment)
+                .withExplicitMimeType(MIME_TYPE_EMAIL)
+                .build()

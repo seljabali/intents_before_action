@@ -1,15 +1,17 @@
+@file:JvmName("IntentsUtil")
+@file:JvmMultifileClass
+
 package com.seljabali.library.intents
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 
-fun getLaunchAppIntent(context: Context, packageName: String): Intent {
-    return context.packageManager.getLaunchIntentForPackage(packageName)
-}
+fun Intents.Companion.getLaunchApp(context: Context, packageName: String): Intent? =
+    context.packageManager.getLaunchIntentForPackage(packageName)
 
 // TODO: Update to newer implementation
-fun createShortCut(context: Context, launcherActivity: Activity, text: String?, drawable: Int?) {
+fun Intents.Companion.createShortCut(context: Context, launcherActivity: Activity, text: String?, drawable: Int?) {
     val shortcutIntent = Intent(context.applicationContext, launcherActivity.javaClass)
     shortcutIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     shortcutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)

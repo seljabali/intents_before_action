@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
+import com.seljabali.library.intents.Intents
 import com.seljabali.library.intents.googleMaps.showInStreetView
 import com.seljabali.library.intents.googleMaps.showLocationInMaps
 import com.seljabali.library.intents.googleMaps.showLocationInNavigation
@@ -14,15 +15,10 @@ import kotlinx.android.synthetic.main.fragment_google_maps_app.*
 class GoogleMapsAppFragment : Fragment() {
 
     companion object {
-        fun getTag(): String {
-            return GoogleMapsAppFragment::class.java.simpleName
-        }
+        fun getTag(): String = GoogleMapsAppFragment::class.java.simpleName
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_google_maps_app, container, false)
-    }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? = inflater.inflate(R.layout.fragment_google_maps_app, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -33,20 +29,20 @@ class GoogleMapsAppFragment : Fragment() {
     }
 
     private fun onShowAddressInMapsClickListener() {
-        activity?.startActivity(showLocationInMaps(etAddress.text.toString()))
+        activity?.startActivity(Intents.showLocationInMaps(etAddress.text.toString()))
     }
 
     private fun onShowAddressInNavigationClickListener() {
-        activity?.startActivity(showLocationInNavigation(etAddress.text.toString()))
+        activity?.startActivity(Intents.showLocationInNavigation(etAddress.text.toString()))
     }
 
     private fun onShowAddressInStreetViewClickListener() {
-        activity?.startActivity(showInStreetView(etLatitude.text.toString().toFloat(),
+        activity?.startActivity(Intents.showInStreetView(etLatitude.text.toString().toFloat(),
                 etLongitude.text.toString().toFloat()))
     }
 
     private fun onShowLatAndLongInNavigationViewClickListener() {
-        activity?.startActivity(showLocationInNavigation(etLatitude.text.toString().toFloat(),
+        activity?.startActivity(Intents.showLocationInNavigation(etLatitude.text.toString().toFloat(),
                 etLongitude.text.toString().toFloat()))
     }
 }

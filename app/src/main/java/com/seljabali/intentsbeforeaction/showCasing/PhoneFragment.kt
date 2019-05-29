@@ -10,9 +10,10 @@ import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
 import kotlinx.android.synthetic.main.fragment_phone.*
 import android.provider.ContactsContract.CommonDataKinds.Phone
-import com.seljabali.library.intents.getDialNumberIntent
-import com.seljabali.library.intents.getPickContactWithPhoneIntent
-import com.seljabali.library.intents.getSmsIntent
+import com.seljabali.library.intents.Intents
+import com.seljabali.library.intents.getDialNumber
+import com.seljabali.library.intents.getPickContactWithPhone
+import com.seljabali.library.intents.getSms
 
 class PhoneFragment: Fragment() {
 
@@ -57,15 +58,15 @@ class PhoneFragment: Fragment() {
     }
 
     private fun onPickContactClickListener() {
-        startActivityForResult(getPickContactWithPhoneIntent(), pickContactRequestCode)
+        startActivityForResult(Intents.getPickContactWithPhone(), pickContactRequestCode)
     }
 
     private fun onSendSmsClickListener() {
-        context!!.startActivity(getSmsIntent(getBody(), getPhoneNumbers()))
+        context!!.startActivity(Intents.getSms(getBody(), getPhoneNumbers()))
     }
 
     private fun onCallNumberClickListener() {
-        context!!.startActivity(getDialNumberIntent(getPhoneNumbers()[0]))
+        context!!.startActivity(Intents.getDialNumber(getPhoneNumbers()[0]))
     }
 
     private fun getPhoneNumbers(): ArrayList<String> {

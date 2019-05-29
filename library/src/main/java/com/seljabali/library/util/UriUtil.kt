@@ -71,17 +71,11 @@ fun getPath(context: Context, uriParam: Uri): String? {
 }
 
 
-fun isExternalStorageDocument(uri: Uri): Boolean {
-    return "com.android.externalstorage.documents" == uri.authority
-}
+fun isExternalStorageDocument(uri: Uri): Boolean = "com.android.externalstorage.documents" == uri.authority
 
-fun isDownloadsDocument(uri: Uri): Boolean {
-    return "com.android.providers.downloads.documents" == uri.authority
-}
+fun isDownloadsDocument(uri: Uri): Boolean = "com.android.providers.downloads.documents" == uri.authority
 
-fun isMediaDocument(uri: Uri): Boolean {
-    return "com.android.providers.media.documents" == uri.authority
-}
+fun isMediaDocument(uri: Uri): Boolean = "com.android.providers.media.documents" == uri.authority
 
 private fun getUriFromImageView(context: Context, imageView: ImageView): Uri {
     val drawable = imageView.drawable

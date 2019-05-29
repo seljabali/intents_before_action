@@ -6,8 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.library.intents.getPlayYouTubeIdIntent
-import com.seljabali.library.intents.getPlayYouTubeQueryIntent
+import com.seljabali.library.intents.Intents
+import com.seljabali.library.intents.getPlayYouTubeId
+import com.seljabali.library.intents.getPlayYouTubeQuery
 import kotlinx.android.synthetic.main.fragment_youtube.*
 
 class YoutubeFragment: Fragment() {
@@ -31,11 +32,11 @@ class YoutubeFragment: Fragment() {
     }
 
     private fun onYoutubeIdClickListener() {
-        context!!.startActivity(getPlayYouTubeIdIntent(context!!, getYoutubeText()))
+        context!!.startActivity(Intents.getPlayYouTubeId(context!!, getYoutubeText()))
     }
 
     private fun onYoutubeNameClickListener() {
-        context!!.startActivity(getPlayYouTubeQueryIntent(context!!, getYoutubeText()))
+        context!!.startActivity(Intents.getPlayYouTubeQuery(context!!, getYoutubeText()))
     }
 
     private fun onClearYoutubeClickListener() {

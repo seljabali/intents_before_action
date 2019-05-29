@@ -1,46 +1,48 @@
+@file:JvmName("IntentsUtil")
+@file:JvmMultifileClass
+
 package com.seljabali.library.intents.googleMaps
 
 import android.content.Intent
 import android.net.Uri
+import com.seljabali.library.intents.Intents
 
 const val mapsPackage = "com.google.android.apps.maps"
 const val navigationQuery = "google.navigation:q="
 const val streetViewQuery = "google.streetview:cbll="
 
-fun showLocationInMaps(address: String): Intent {
+fun Intents.Companion.showLocationInMaps(address: String): Intent {
     val gmmIntentUri = Uri.parse("geo:0,0?q=$address")
     val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
     mapIntent.`package` = mapsPackage
     return mapIntent
 }
 
-fun showLocationInNavigation(address: String): Intent {
+fun Intents.Companion.showLocationInNavigation(address: String): Intent {
     val builder = StringBuilder()
     builder.append(navigationQuery)
     builder.append(Uri.encode(address))
     return Intent(Intent.ACTION_VIEW, Uri.parse(builder.toString()))
 }
 
-fun showLocationInNavigation(latitude: Float, longitude: Float): Intent {
-    val builder = StringBuilder()
-    builder.append(navigationQuery)
-    builder.append(latitude)
-    builder.append(",")
-    builder.append(longitude)
+fun Intents.Companion.showLocationInNavigation(latitude: Float, longitude: Float): Intent {
+    val builder = StringBuilder().apply {
+        append(navigationQuery)
+        append(latitude)
+        append(",")
+        append(longitude)
+    }
     return Intent(Intent.ACTION_VIEW, Uri.parse(builder.toString()))
 }
 
-fun showInStreetView(latitude: Float, longitude: Float): Intent {
-    return showInStreetView(latitude, longitude, null, null, null, null)
-}
+fun Intents.Companion.showInStreetView(latitude: Float, longitude: Float): Intent =
+    showInStreetView(latitude, longitude, null, null, null, null)
 
-fun showInStreetView(latitude: Float, longitude: Float, zoom: Float): Intent {
-    return showInStreetView(latitude, longitude, null, null, zoom, null)
-}
+fun Intents.Companion.showInStreetView(latitude: Float, longitude: Float, zoom: Float): Intent =
+    showInStreetView(latitude, longitude, null, null, zoom, null)
 
-fun showInStreetView(latitude: Float, longitude: Float, zoom: Float, mapZoom: Int): Intent {
-    return showInStreetView(latitude, longitude, null, null, zoom, mapZoom)
-}
+fun Intents.Companion.showInStreetView(latitude: Float, longitude: Float, zoom: Float, mapZoom: Int): Intent =
+    showInStreetView(latitude, longitude, null, null, zoom, mapZoom)
 
 /**
  * Opens the Street View application to the given location.
@@ -64,12 +66,13 @@ fun showInStreetView(latitude: Float, longitude: Float, zoom: Float, mapZoom: In
  * This value is passed on to the Maps activity when the Street View "Go to Maps" menu item is chosen.
  * It corresponds to the zoomLevel parameter in {@showLocation(float, float, Integer)}
  */
-fun showInStreetView(latitude: Float, longitude: Float, yaw: Float?, pitch: Int?, zoom: Float?,
+fun Intents.Companion.showInStreetView(latitude: Float, longitude: Float, yaw: Float?, pitch: Int?, zoom: Float?,
                      mapZoom: Int?): Intent {
-    val builder = StringBuilder(streetViewQuery)
-    builder.append(latitude)
-    builder.append(",")
-    builder.append(longitude)
+    val builder = StringBuilder(streetViewQuery).apply {
+        append(latitude)
+        append(",")
+        append(longitude)
+    }
     if (yaw != null || pitch != null || zoom != null) {
         val cbpParam = String.format("%s,,%s,%s", yaw ?: "", pitch ?: "", zoom ?: "")
         builder.append("&cbp=1,")
@@ -79,8 +82,8 @@ fun showInStreetView(latitude: Float, longitude: Float, yaw: Float?, pitch: Int?
         builder.append("&mz=")
         builder.append(mapZoom)
     }
-    val intent = Intent()
-    intent.action = Intent.ACTION_VIEW
-    intent.data = Uri.parse(builder.toString())
-    return intent
+    return Intent().apply {
+        action = Intent.ACTION_VIEW
+        data = Uri.parse(builder.toString())
+    }
 }

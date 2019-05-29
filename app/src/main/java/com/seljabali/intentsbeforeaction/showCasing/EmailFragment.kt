@@ -1,20 +1,18 @@
 package com.seljabali.intentsbeforeaction.showCasing
 
-import android.net.Uri
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.library.intents.getEmailSendIntent
-import com.seljabali.library.intents.getInboxOpenIntent
-import com.seljabali.library.intents.getShareEmailIntent
+import com.seljabali.library.intents.Intents
+import com.seljabali.library.intents.getEmailSend
+import com.seljabali.library.intents.getInboxOpen
+import com.seljabali.library.intents.getShareEmail
 import kotlinx.android.synthetic.main.fragment_email.*
 
-class EmailFragment: Fragment() {
-
-    private var fileUri: Uri? = null
+class EmailFragment : Fragment() {
 
     companion object {
         fun getTag(): String {
@@ -22,10 +20,7 @@ class EmailFragment: Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_email, container, false)
-    }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? = inflater.inflate(R.layout.fragment_email, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -35,27 +30,21 @@ class EmailFragment: Fragment() {
     }
 
     private fun onOpenInboxClickListener() {
-        startActivity(getInboxOpenIntent())
+        startActivity(Intents.getInboxOpen())
     }
 
     private fun onShareEmailClickListener() {
         // TODO: Add attachments
-        startActivity(getShareEmailIntent(getToAddresses(), getSubject(), getBody(), null))
+        startActivity(Intents.getShareEmail(getToAddresses(), getSubject(), getBody(), null))
     }
 
     private fun onSendEmailClickListener() {
-        startActivity(getEmailSendIntent(getToAddresses()[0], getSubject()))
+        startActivity(Intents.getEmailSend(getToAddresses()[0], getSubject()))
     }
 
-    private fun getToAddresses(): ArrayList<String> {
-        return ArrayList(etToAddresses.text.toString().split(","))
-    }
+    private fun getToAddresses(): ArrayList<String> = ArrayList(etToAddresses.text.toString().split(","))
 
-    private fun getSubject(): String {
-        return etSubject.text.toString()
-    }
+    private fun getSubject(): String = etSubject.text.toString()
 
-    private fun getBody(): String {
-        return etBody.text.toString()
-    }
+    private fun getBody(): String = etBody.text.toString()
 }

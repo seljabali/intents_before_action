@@ -1,3 +1,6 @@
+@file:JvmName("IntentsUtil")
+@file:JvmMultifileClass
+
 package com.seljabali.library.intents
 
 import android.content.Context
@@ -18,86 +21,86 @@ private const val amazonAppUrlForQueries = "amzn://apps/android?s="
 private const val amazonWebUrlForQueries = "http://www.amazon.com/gp/mas/dl/android?s="
 
 // Google Play, packages
-fun getGooglePlayForPackageIntent(context: Context, packageName: String): Intent {
-    var intent: Intent? = getGooglePlayNativeForPackageIntent(packageName)
+fun Intents.Companion.getGooglePlayForPackage(context: Context, packageName: String): Intent {
+    var intent: Intent? = getGooglePlayNativeForPackage(packageName)
     if (!isIntentAvailable(context, intent)) {
-        intent = getGooglePlayWebForPackageIntent(packageName)
+        intent = getGooglePlayWebForPackage(packageName)
     }
     return intent!!
 }
 
-fun getGooglePlayNativeForPackageIntent(packageName: String): Intent {
+fun Intents.Companion.getGooglePlayNativeForPackage(packageName: String): Intent {
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(googlePlayAppUrlForPackages + packageName))
     intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
     return intent
 }
 
-fun getGooglePlayWebForPackageIntent(packageName: String): Intent {
-    val intent = getOpenWebBrowserIntent(googlePlayWebUrlForPackages + packageName)
+fun Intents.Companion.getGooglePlayWebForPackage(packageName: String): Intent {
+    val intent = getOpenWebBrowser(googlePlayWebUrlForPackages + packageName)
     intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
     return intent
 }
 
 // Google Play, queries
-fun getGooglePlayForQueryIntent(context: Context, query: String): Intent? {
-    var intent: Intent? = getGooglePlayNativeForQueryIntent(query)
+fun Intents.Companion.getGooglePlayForQuery(context: Context, query: String): Intent? {
+    var intent: Intent? = getGooglePlayNativeForQuery(query)
     if (!isIntentAvailable(context, intent)) {
-        intent = getGooglePlayWebForQueryIntent(query)
+        intent = getGooglePlayWebForQuery(query)
     }
     return intent
 }
 
-fun getGooglePlayNativeForQueryIntent(query: String): Intent {
+fun Intents.Companion.getGooglePlayNativeForQuery(query: String): Intent {
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(googlePlayAppUrlForQueries.format(query)))
     intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
     return intent
 }
 
-fun getGooglePlayWebForQueryIntent(query: String): Intent {
-    val intent = getOpenWebBrowserIntent(googlePlayWebUrlForQueries.format(query))
+fun Intents.Companion.getGooglePlayWebForQuery(query: String): Intent {
+    val intent = getOpenWebBrowser(googlePlayWebUrlForQueries.format(query))
     intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
     return intent
 }
 
 
 // Amazon, packages
-fun getAmazonForPackageIntent(context: Context, packageName: String): Intent {
-    var intent: Intent? = getAmazonNativeForPackageIntent(packageName)
+fun Intents.Companion.getAmazonForPackage(context: Context, packageName: String): Intent {
+    var intent: Intent? = getAmazonNativeForPackage(packageName)
     if (!isIntentAvailable(context, intent)) {
-        intent = getAmazonWebForPackageIntent(packageName)
+        intent = getAmazonWebForPackage(packageName)
     }
     return intent!!
 }
 
-fun getAmazonNativeForPackageIntent(packageName: String): Intent {
+fun Intents.Companion.getAmazonNativeForPackage(packageName: String): Intent {
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(amazonAppUrlForPackages + packageName))
     intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
     return intent
 }
 
-fun getAmazonWebForPackageIntent(packageName: String): Intent {
-    val intent = getOpenWebBrowserIntent(amazonWebUrlForPackages + packageName)
+fun Intents.Companion.getAmazonWebForPackage(packageName: String): Intent {
+    val intent = getOpenWebBrowser(amazonWebUrlForPackages + packageName)
     intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
     return intent
 }
 
 // Amazon, queries
-fun getAmazonForQueryIntent(context: Context, packageName: String): Intent {
-    var intent: Intent? = getAmazonNativeForQueryIntent(packageName)
+fun Intents.Companion.getAmazonForQuery(context: Context, packageName: String): Intent {
+    var intent: Intent? = getAmazonNativeForQuery(packageName)
     if (!isIntentAvailable(context, intent)) {
-        intent = getAmazonWebForQueryIntent(packageName)
+        intent = getAmazonWebForQuery(packageName)
     }
     return intent!!
 }
 
-fun getAmazonNativeForQueryIntent(packageName: String): Intent {
+fun Intents.Companion.getAmazonNativeForQuery(packageName: String): Intent {
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(amazonAppUrlForQueries + packageName))
     intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
     return intent
 }
 
-fun getAmazonWebForQueryIntent(packageName: String): Intent {
-    val intent = getOpenWebBrowserIntent(amazonWebUrlForQueries + packageName)
+fun Intents.Companion.getAmazonWebForQuery(packageName: String): Intent {
+    val intent = getOpenWebBrowser(amazonWebUrlForQueries + packageName)
     intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
     return intent
 }

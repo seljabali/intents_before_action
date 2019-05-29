@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.IntentsShowCasingActivity
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.library.intents.createShortCut
-import com.seljabali.library.intents.getLaunchAppIntent
+import com.seljabali.library.intents.*
 import kotlinx.android.synthetic.main.fragment_app.*
 
 class AppFragment: Fragment() {
@@ -36,11 +35,11 @@ class AppFragment: Fragment() {
     }
 
     private fun onCreateShortcutClickListener() {
-        createShortCut(context!!, activity as IntentsShowCasingActivity, null, null)
+        Intents.createShortCut(context!!, activity as IntentsShowCasingActivity, null, null)
     }
 
     private fun onLaunchAppClickListener() {
-        context!!.startActivity(getLaunchAppIntent(context!!, getAppPackageName()))
+        context!!.startActivity(Intents.getLaunchApp(context!!, getAppPackageName()))
     }
 
     private fun getAppPackageName(): String {

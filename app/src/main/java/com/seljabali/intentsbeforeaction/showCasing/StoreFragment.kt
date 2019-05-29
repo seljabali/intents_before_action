@@ -6,10 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.library.intents.getAmazonForPackageIntent
-import com.seljabali.library.intents.getAmazonForQueryIntent
-import com.seljabali.library.intents.getGooglePlayForPackageIntent
-import com.seljabali.library.intents.getGooglePlayForQueryIntent
+import com.seljabali.library.intents.*
 import kotlinx.android.synthetic.main.fragment_store.*
 
 class StoreFragment: Fragment() {
@@ -34,19 +31,19 @@ class StoreFragment: Fragment() {
     }
 
     private fun onGooglePlaySearchClickListener() {
-        context!!.startActivity(getGooglePlayForQueryIntent(context!!, getEnteredAppName()))
+        context!!.startActivity(Intents.getGooglePlayForQuery(context!!, getEnteredAppName()))
     }
 
     private fun onGooglePlayClickListener() {
-        context!!.startActivity(getGooglePlayForPackageIntent(context!!, getEnteredAppName()))
+        context!!.startActivity(Intents.getGooglePlayForPackage(context!!, getEnteredAppName()))
     }
 
     private fun onAmazonSearchClickListener() {
-        context!!.startActivity(getAmazonForQueryIntent(context!!, getEnteredAppName()))
+        context!!.startActivity(Intents.getAmazonForQuery(context!!, getEnteredAppName()))
     }
 
     private fun onAmazonClickListener() {
-        context!!.startActivity(getAmazonForPackageIntent(context!!, getEnteredAppName()))
+        context!!.startActivity(Intents.getAmazonForPackage(context!!, getEnteredAppName()))
     }
 
     private fun getEnteredAppName(): String {

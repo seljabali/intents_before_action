@@ -9,10 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seljabali.intentsbeforeaction.R
-import com.seljabali.library.intents.getPickFile
-import com.seljabali.library.intents.getPlayAudioFileIntent
-import com.seljabali.library.intents.getPlayImageFileIntent
-import com.seljabali.library.intents.getPlayVideoFileIntent
+import com.seljabali.library.intents.*
 import com.seljabali.library.util.getPath
 import kotlinx.android.synthetic.main.fragment_media.*
 
@@ -22,15 +19,10 @@ class MediaFragment: Fragment() {
     private var fileUri: Uri? = null
 
     companion object {
-        fun getTag(): String {
-            return MediaFragment::class.java.simpleName
-        }
+        fun getTag(): String = MediaFragment::class.java.simpleName
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_media, container, false)
-    }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? = inflater.inflate(R.layout.fragment_media, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -50,15 +42,15 @@ class MediaFragment: Fragment() {
     }
 
     private fun onPlayAudioClickListener() {
-        startActivity(getPlayAudioFileIntent(getPathText()))
+        startActivity(Intents.getPlayAudioFile(getPathText()))
     }
 
     private fun onPlayVideoClickListener() {
-        startActivity(getPlayVideoFileIntent(getPathText()))
+        startActivity(Intents.getPlayVideoFile(getPathText()))
     }
 
     private fun onViewImagePickClickListener() {
-        startActivity(getPlayImageFileIntent(fileUri!!))
+        startActivity(Intents.getPlayImageFile(fileUri!!))
     }
 
     private fun onPickFileResult(fileUri: Uri) {
@@ -71,7 +63,7 @@ class MediaFragment: Fragment() {
     }
 
     private fun onFilePickClickListener() {
-        startActivityForResult(getPickFile(), pickFileRequestCode)
+        startActivityForResult(Intents.getPickFile(), pickFileRequestCode)
     }
 
     private fun getPathText(): String {

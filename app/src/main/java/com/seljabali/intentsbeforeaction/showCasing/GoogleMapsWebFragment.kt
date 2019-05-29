@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.fragment_google_maps_web.*
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.AdapterView.OnItemSelectedListener
+import com.seljabali.library.intents.Intents
 import com.seljabali.library.intents.googleMaps.MapViewType
 import com.seljabali.library.intents.googleMaps.getMapInWeb
 import com.seljabali.library.intents.googleMaps.getQueryMapInWeb
@@ -52,11 +53,11 @@ class GoogleMapsWebFragment : Fragment() {
     }
 
     private fun onShowAddressInMapsWebClickListener() {
-        activity!!.startActivity(getQueryMapInWeb(etAddressForWeb.text.toString()))
+        activity!!.startActivity(Intents.getQueryMapInWeb(etAddressForWeb.text.toString()))
     }
 
     private fun onShowLatLongInMapsWebClickListener() {
-        activity!!.startActivity(getMapInWeb(etLatitude.text.toString().toFloat(), etLongitude.text.toString().toFloat(), getZoomValue(), selectedMapViewType))
+        activity!!.startActivity(Intents.getMapInWeb(etLatitude.text.toString().toFloat(), etLongitude.text.toString().toFloat(), getZoomValue(), selectedMapViewType))
     }
 
     private fun getZoomValue(): Int {
