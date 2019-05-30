@@ -48,6 +48,6 @@ startActivity(Intents.getPlayYouTubeQuery(context, "Never Gonna Give You Up"))
 In your module's `build.gradle`:
 ```
 dependencies {
-    implementation 'com.github.seljabali:intents_before_action:v1.0.0'
+    implementation 'com.github.seljabali:intents_before_action:v1.0.1'
 }
 ```
