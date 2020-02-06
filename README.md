@@ -51,3 +51,6 @@ dependencies {
     implementation 'com.github.seljabali:intents_before_action:v1.0.1'
 }
 ```
+
+## LICENSE
+This is absolutely FREE. Feel free to include and in our own app without credit. If you liked this app however, do give the repo a star please!
