@@ -53,4 +53,4 @@ dependencies {
 ```
 
 ## LICENSE
-This is absolutely FREE. Feel free to include and in our own app without credit. If you liked this app however, do give the repo a star please!
+[Creative Commons Zero v1.0 Universal](https://github.com/seljabali/intents_before_action/blob/master/LICENSE)
